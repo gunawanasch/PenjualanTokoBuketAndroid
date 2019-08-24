@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/toolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlListBarang"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbarLayout"
+            android:layout_above="@+id/llKirim">
+            <ProgressBar
+                android:id="@+id/pbBarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBarang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="0dp"
+                android:clipToPadding="false"
+                android:dividerHeight="10dp"
+                android:overScrollMode="always"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llKirim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_weight="3">
+                <TextView
+                    android:id="@+id/tvTitleTotalHarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Total Harga"/>
+                <TextView
+                    android:id="@+id/tvTotalHarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/orange1"
+                    android:textStyle="bold"
+                    android:text="Rp 0"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnKirim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:background="@drawable/button_selector"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                android:text="Kirim"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

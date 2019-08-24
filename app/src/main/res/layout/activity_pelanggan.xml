@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/toolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:id="@+id/llCari"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbarLayout"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/etCari"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/edittext_rounded_search"
+                android:drawableLeft="@drawable/search_gray"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:hint="Masukkan nama pelanggan"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="3"
+                android:singleLine="true"
+                android:textSize="16dp"
+                android:clickable="true"/>
+            <TextView
+                android:id="@+id/tvCari"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Cari"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlListPelanggan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/llCari"
+            android:orientation="vertical">
+            <ProgressBar
+                android:id="@+id/pbPelanggan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPelanggan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="0dp"
+                android:clipToPadding="false"
+                android:dividerHeight="10dp"
+                android:overScrollMode="always"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/add"
+            app:fabSize="normal"/>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
